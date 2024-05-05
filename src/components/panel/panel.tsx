@@ -1,7 +1,10 @@
-import { Button, Paper, TextField, Box } from '@mui/material';
-import { Dropdown } from '..';
+import { Button, Paper, Box } from '@mui/material';
+import { useCaesarCipher } from '../../utils';
+import { Input } from '../input/Input.tsx';
+import { Select } from '../select/Select.tsx';
 
 export const Panel = () => {
+  const { handleDecrypt, handleEncrypt } = useCaesarCipher();
   return (
     <Paper
       elevation={10}
@@ -15,18 +18,14 @@ export const Panel = () => {
         alignContent: 'center'
       }}
     >
-      <TextField
-        fullWidth
-        label='Введите текст'
-        multiline
-        maxRows={5}
-        sx={{ paddingBottom: '10px' }}
-      />
-
-      <Dropdown />
-      <Box>
-        <Button size='large' sx={{ width: '300px' }} variant='contained'>
-          Рассчитать
+      <Input />
+      <Select />
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px', mt: 2 }}>
+        <Button onClick={handleDecrypt} size='large' variant='contained'>
+          Зашифровать
+        </Button>
+        <Button onClick={handleEncrypt} size='large' variant='contained'>
+          Расшифровать
         </Button>
       </Box>
     </Paper>
