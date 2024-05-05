@@ -8,7 +8,7 @@ export const Output = () => {
   return (
     <Box>
       <Title name='Результат' />
-      <Paper elevation={10} sx={{ visibility: 'visible' }}>
+      <Paper elevation={10}>
         <Box sx={{ display: 'flex', justifyContent: 'flex-start', p: 2 }}>{outputText}</Box>
       </Paper>
     </Box>

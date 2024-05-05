@@ -5,6 +5,7 @@ import { Select } from '../select/Select.tsx';
 
 export const Panel = () => {
   const { handleDecrypt, handleEncrypt } = useCaesarCipher();
+
   return (
     <Paper
       elevation={10}
