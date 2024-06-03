@@ -1,17 +1,14 @@
-import { Box } from '@mui/material';
-import './App.module.css';
-import cl from './App.module.css';
-import { Title, Panel, Output } from './components';
-import CaesarCipherProvider from './utils/context/CaesarCipherProvider.tsx';
+import { CipherForm } from './components';
+import { Typography } from '@mui/material';
+import styles from './App.module.css';
 
-export const App = () => (
-  <CaesarCipherProvider>
-    <div className={cl.app}>
-      <Box display='flex' flexDirection='column' gap={3} width={600}>
-        <Title name='Шифр Цезаря' />
-        <Panel />
-        <Output />
-      </Box>
+export const App = () => {
+  return (
+    <div className={styles.app}>
+      <Typography fontSize='30px' mb={1} color='black' variant='h1'>
+        Шифр Цезаря
+      </Typography>
+      <CipherForm />
     </div>
-  </CaesarCipherProvider>
-);
+  );
+};
